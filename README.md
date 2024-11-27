@@ -83,3 +83,16 @@ mention_count = new_text.count("$")
 word_count = len(new_text.split())
 prediction = model.predict([[sentiment, mention_count, word_count]])
 return ["negative", "neutral", "positive"][prediction[0] + 1]
+
+Detailed Notes
+API Configuration:
+Replace placeholders like your_twitter_api_key with actual credentials.
+Ensure API access is granted for each platform (Twitter Developer, Reddit API, Telegram API).
+Scraping Limitations:
+Respect rate limits for Twitter, Reddit, and Telegram APIs.
+For Telegram, you must have permission to access private groups or channels.
+Model Customization:
+Experiment with other ML models (e.g., XGBoost, SVM).
+Improve features by including time-series data for stocks or incorporating external financial indicators.
+Deployment:
+Use frameworks like Flask or FastAPI to serve predictions as a web API.
